@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Liste du personnel</h2>
+    <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Liste des clients</h2>
     <table class="table shadow p-3 mb-5 bg-body rounded" id="myTable">
         <thead>
             <tr>

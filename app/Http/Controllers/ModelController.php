@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class ModelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('client.liste_client', [
-            'clients' => Client::all()
-        ]);
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
