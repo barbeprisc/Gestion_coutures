@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Mesure extends Model
 {
     use HasFactory;
+    public function Client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }
