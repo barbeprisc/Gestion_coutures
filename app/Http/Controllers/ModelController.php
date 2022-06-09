@@ -13,8 +13,11 @@ class ModelController extends Controller
      */
     public function index()
     {
-        //
+        return view('model.liste_model', [
+            'models' => Model::all()
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +26,7 @@ class ModelController extends Controller
      */
     public function create()
     {
-        //
+        return view('model.formulaire_model');
     }
 
     /**
@@ -34,7 +37,11 @@ class ModelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Model::create([
+            'nom' => $request->nom,
+            'photo' => $request->prenom,
+        ]);
+        return redirect()->route('gestion_model.index');
     }
 
     /**
@@ -45,7 +52,9 @@ class ModelController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('model.show_model', [
+            'finds' => Model::find($id),
+        ]);
     }
 
     /**
@@ -56,7 +65,9 @@ class ModelController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('model.edit_model', [
+            'finds' => Model::find($id),
+        ]);
     }
 
     /**
@@ -68,7 +79,10 @@ class ModelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Model::find($id);
+        $client->update($request->all());
+
+        return redirect()->route('gestion_model.index');
     }
 
     /**
@@ -79,6 +93,10 @@ class ModelController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $client = Model::find($id);
+        $client->delete();
+
+        return redirect()->route('gestion_model.index');
     }
 }
