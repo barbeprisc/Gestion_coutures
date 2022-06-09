@@ -3,6 +3,12 @@
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ModelController;
+
+use App\Http\Controllers\MesureController;
+
+use App\Http\Controllers\PayementController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +37,11 @@ Route::get('supprimer_client/{id}', [ClientController::class, 'destroy']);
 Route::resource('gestion_model', ModelController::class);
 
 Route::get('supprimer_model/{id}', [ModelController::class, 'destroy']);
+
+Route::resource('gestion_mesure', MesureController::class);
+
+Route::get('supprimer_mesure/{id}', [MesureController::class, 'destroy']);
+
+Route::resource('gestion_payement', PayementController::class);
+
+Route::get('supprimer_payement/{id}', [PayementController::class, 'destroy']);
