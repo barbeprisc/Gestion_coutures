@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Model extends Model
+class Modele extends Model
 {
     use HasFactory;
     public function Payement()
@@ -14,6 +14,6 @@ class Model extends Model
     }
 
     protected $guarded = [
-        
+
     ];
 }

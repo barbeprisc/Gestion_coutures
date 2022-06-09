@@ -3,7 +3,7 @@
 use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ModelController;
+use App\Http\Controllers\ModeleController;
 
 use App\Http\Controllers\MesureController;
 
@@ -34,9 +34,9 @@ Route::resource('gestion_client', ClientController::class);
 
 Route::get('supprimer_client/{id}', [ClientController::class, 'destroy']);
 
-Route::resource('gestion_model', ModelController::class);
+Route::resource('gestion_modele', ModeleController::class);
 
-Route::get('supprimer_model/{id}', [ModelController::class, 'destroy']);
+Route::get('supprimer_modele/{id}', [ModeleController::class, 'destroy']);
 
 Route::resource('gestion_mesure', MesureController::class);
 

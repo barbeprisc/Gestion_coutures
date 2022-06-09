@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Modele;
 use Illuminate\Http\Request;
 
-class ModelController extends Controller
+class ModeleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,8 @@ class ModelController extends Controller
      */
     public function index()
     {
-        return view('model.liste_model', [
-            'models' => Model::all()
+        return view('modele.liste_mod', [
+            'modeles' => Modele::all()
         ]);
     }
 
@@ -26,7 +27,7 @@ class ModelController extends Controller
      */
     public function create()
     {
-        return view('model.formulaire_model');
+        return view('modele.formulaire_mod');
     }
 
     /**
@@ -37,11 +38,11 @@ class ModelController extends Controller
      */
     public function store(Request $request)
     {
-        Model::create([
+        Modele::create([
             'nom_mod' => $request->nom_mod,
-            'photo' => $request->prenom,
+            'photo' => $request->photo,
         ]);
-        return redirect()->route('gestion_model.index');
+        return redirect()->route('gestion_modele.index');
     }
 
     /**
@@ -52,8 +53,8 @@ class ModelController extends Controller
      */
     public function show($id)
     {
-        return view('model.show_model', [
-            'finds' => Model::find($id),
+        return view('modele.show_mod', [
+            'finds' => Modele::find($id),
         ]);
     }
 
@@ -65,8 +66,8 @@ class ModelController extends Controller
      */
     public function edit($id)
     {
-        return view('model.edit_model', [
-            'finds' => Model::find($id),
+        return view('modele.edit_mod', [
+            'finds' => Modele::find($id),
         ]);
     }
 
@@ -79,10 +80,10 @@ class ModelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Model::find($id);
-        $client->update($request->all());
+        $modele = Modele::find($id);
+        $modele->update($request->all());
 
-        return redirect()->route('gestion_model.index');
+        return redirect()->route('gestion_modele.index');
     }
 
     /**
@@ -94,9 +95,9 @@ class ModelController extends Controller
     public function destroy($id)
     {
 
-        $client = Model::find($id);
-        $client->delete();
+        $modele = Modele::find($id);
+        $modele->delete();
 
-        return redirect()->route('gestion_model.index');
+        return redirect()->route('gestion_modele.index');
     }
 }
