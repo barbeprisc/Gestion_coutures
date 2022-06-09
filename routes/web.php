@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -27,3 +27,7 @@ require __DIR__.'/auth.php';
 Route::resource('gestion_client', ClientController::class);
 
 Route::get('supprimer_client/{id}', [ClientController::class, 'destroy']);
+
+Route::resource('gestion_model', ModelController::class);
+
+Route::get('supprimer_model/{id}', [ModelController::class, 'destroy']);
