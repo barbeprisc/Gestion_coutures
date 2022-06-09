@@ -12,4 +12,8 @@ class Model extends Model
     {
         return $this->hasOne(Payement::class);
     }
+
+    protected $guarded = [
+        
+    ];
 }

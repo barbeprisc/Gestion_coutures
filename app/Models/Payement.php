@@ -17,4 +17,8 @@ class Payement extends Model
     {
         return $this->belongsTo(Model::class);
     }
+
+    protected $guarded = [
+        
+    ];
 }

@@ -12,4 +12,8 @@ class Mesure extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    protected $guarded = [
+        
+    ];
 }
