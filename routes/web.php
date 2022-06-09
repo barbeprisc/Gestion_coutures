@@ -25,3 +25,5 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('gestion_client', ClientController::class);
+
+Route::get('supprimer_client/{id}', [ClientController::class, 'destroy']);

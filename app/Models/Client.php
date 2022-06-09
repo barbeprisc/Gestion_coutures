@@ -17,4 +17,6 @@ class Client extends Model
     {
         return $this->hasOne(Payement::class);
     }
+
+    protected $guarded = [];
 }

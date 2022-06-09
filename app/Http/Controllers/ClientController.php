@@ -27,7 +27,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('client.formulaire_client');
     }
 
     /**
@@ -38,7 +38,15 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Client::create([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'sexe' => $request->sexe,
+            'telephone' => $request->telephone,
+            'adresse' => $request->adresse,
+            'email' => $request->email,
+        ]);
+        return redirect()->route('gestion_client.index');
     }
 
     /**
@@ -49,7 +57,9 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('client.show_client', [
+            'finds' => Client::find($id),
+        ]);
     }
 
     /**
@@ -60,7 +70,9 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('client.edit_client', [
+            'finds' => Client::find($id),
+        ]);
     }
 
     /**
@@ -72,7 +84,10 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Client::find($id);
+        $client->update($request->all());
+
+        return redirect()->route('gestion_client.index');
     }
 
     /**
@@ -83,6 +98,10 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $client = Client::find($id);
+        $client->delete();
+
+        return redirect()->route('gestion_client.index');
     }
 }

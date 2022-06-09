@@ -3,6 +3,9 @@
 
 <div class="container">
     <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Liste des clients</h2>
+    <a href="{{ route('gestion_client.create') }}">
+        <button type="submit" class="btn btn-outline-primary me-md-2 btn-lg " name="valider">Nouveau</button>
+        </a>
     <table class="table shadow p-3 mb-5 bg-body rounded" id="myTable">
         <thead>
             <tr>
@@ -27,9 +30,9 @@
                 <td>{{$client->telephone}}</td>
                 <td>{{$client->adresse}}</td>
                 <td>{{$client->email}}</td>
-                <td> <a class="button" href="{{route('gestion_client.show', [$client->id]) }}"><img src="{{ asset('Images/more.png') }}" style="width:30px;height:30px" alt=""></a> </td>
-                <td> <a class="button" href="{{route('gestion_client.edit', [$client->id]) }}"><img src="{{ asset('Images/edit.png') }}" style="width:30px;height:30px" alt=""></a> </td>
-                <td><a class="button" href="{{url('supprimer_client/'.$client->id) }}"><img src="{{ asset('Images/del.png') }}" style="width:30px;height:30px" alt=""></a></td>
+                <td> <a class="button" href="{{route('gestion_client.show', [$client->id]) }}"><img src="{{ asset('Img/more.png') }}" style="width:30px;height:30px" alt=""></a> </td>
+                <td> <a class="button" href="{{route('gestion_client.edit', [$client->id]) }}"><img src="{{ asset('Img/edit.png') }}" style="width:30px;height:30px" alt=""></a> </td>
+                <td><a class="button" href="{{url('supprimer_client/'.$client->id) }}"><img src="{{ asset('Img/del.png') }}" style="width:30px;height:30px" alt=""></a></td>
                 @endforeach
         </tbody>
     </table>
