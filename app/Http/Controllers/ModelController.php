@@ -38,7 +38,7 @@ class ModelController extends Controller
     public function store(Request $request)
     {
         Model::create([
-            'nom' => $request->nom,
+            'nom_mod' => $request->nom_mod,
             'photo' => $request->prenom,
         ]);
         return redirect()->route('gestion_model.index');

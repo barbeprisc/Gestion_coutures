@@ -15,7 +15,7 @@ class CreateModelsTable extends Migration
     {
         Schema::create('models', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('nom_mod');
             $table->string('photo');
             $table->timestamps();
         });
