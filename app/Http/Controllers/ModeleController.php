@@ -40,7 +40,7 @@ class ModeleController extends Controller
     {
         Modele::create([
             'nom_mod' => $request->nom_mod,
-            'photo' => $request->photo,
+            'photo' => $request->photo->store('img_modeles', 'public')
         ]);
         return redirect()->route('gestion_modele.index');
     }

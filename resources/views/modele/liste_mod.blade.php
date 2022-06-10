@@ -11,7 +11,6 @@
             <tr>
                 <th scope="col">Numéro</th>
                 <th scope="col">Nom_mod</th>
-                <th scope="col">Photo</th>
                 <th colspan="3">Actions</th>
 
             </tr>
@@ -21,7 +20,6 @@
             <tr>
                 <th scope="row">{{$modele->id}}</th>
                 <td>{{$modele->nom_mod}}</td>
-                <td>{{$modele->photo}}</td>
                 <td> <a class="button" href="{{route('gestion_modele.show', [$modele->id]) }}"><img src="{{ asset('Img/more.png') }}" style="width:30px;height:30px" alt=""></a> </td>
                 <td> <a class="button" href="{{route('gestion_modele.edit', [$modele->id]) }}"><img src="{{ asset('Img/edit.png') }}" style="width:30px;height:30px" alt=""></a> </td>
                 <td><a class="button" href="{{url('supprimer_modele/'.$modele->id) }}"><img src="{{ asset('Img/del.png') }}" style="width:30px;height:30px" alt=""></a></td>

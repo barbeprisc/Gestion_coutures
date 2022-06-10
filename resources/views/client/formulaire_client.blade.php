@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
 <div class="container">
-    <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Formulaire d'insertion</h2>
+    <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Formulaire d'insertion des clients</h2>
     <h5 class="text-center mb-3">Veuillez insérer vos données dans le formulaire ci-dessous.</h5>
     <form method="POST" class="shadow p-3 mb-5 bg-body rounded" action="{{route('gestion_client.store')}}" enctype="multipart/form-data">
         @csrf
