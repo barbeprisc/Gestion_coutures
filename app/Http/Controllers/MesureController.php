@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Models\Mesure;
 
 class MesureController extends Controller
 {
@@ -26,7 +28,9 @@ class MesureController extends Controller
      */
     public function create()
     {
-        return view('mesure.formulaire_mesure');
+        return view('mesure.formulaire_mesure', [
+            'clients' => Client::all()
+        ]);
     }
 
     /**

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
 use Illuminate\Http\Request;
+use App\Models\Mesure;
+use App\Models\Payement;
 
 class PayementController extends Controller
 {
@@ -13,8 +16,11 @@ class PayementController extends Controller
      */
     public function index()
     {
-        //
+        return view('payement.liste_pay', [
+            'payements' => Payement::all()
+        ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,7 +29,10 @@ class PayementController extends Controller
      */
     public function create()
     {
-        //
+        return view('payement.formulaire_pay', [
+            'clients' => Client::all(),
+            'modeles' => Modele::all(),
+        ]);
     }
 
     /**
@@ -34,7 +43,12 @@ class PayementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Mesure::create([
+            'prix_total' => $request->prix_total,
+            'avance' => $request->avance,
+            'reste' => $request->reste,
+        ]);
+        return redirect()->route('gestion_payement.index');
     }
 
     /**
@@ -45,7 +59,9 @@ class PayementController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('payement.show_pay', [
+            'finds' => Payement::find($id),
+        ]);
     }
 
     /**
@@ -56,7 +72,9 @@ class PayementController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('payement.edit_pay', [
+            'finds' => Payement::find($id),
+        ]);
     }
 
     /**
@@ -68,7 +86,10 @@ class PayementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $client = Payement::find($id);
+        $client->update($request->all());
+
+        return redirect()->route('gestion_payement.index');
     }
 
     /**
@@ -79,6 +100,10 @@ class PayementController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $client = Payement::find($id);
+        $client->delete();
+
+        return redirect()->route('gestion_payement.index');
     }
 }

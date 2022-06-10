@@ -22,8 +22,8 @@ class CreatePayementsTable extends Migration
             $table->unsignedBigInteger('clients_id')->unsigned();
             $table->foreign('clients_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
             
-            $table->unsignedBigInteger('models_id')->unsigned();
-            $table->foreign('models_id')->references('id')->on('models')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('modeles_id')->unsigned();
+            $table->foreign('modeles_id')->references('id')->on('modeles')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

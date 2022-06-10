@@ -8,17 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Payement extends Model
 {
     use HasFactory;
-    public function Client()
-    {
-        return $this->belongsTo(Client::class);
-    }
-
-    public function Model()
-    {
-        return $this->belongsTo(Model::class);
-    }
-
     protected $guarded = [
         
     ];
+    public function Client()
+    {
+        return $this->belongsTo(Client::class, 'clients_id');
+    }
+
+    public function Modele()
+    {
+        return $this->belongsTo(Modele::class, 'modeles_id');
+    }
 }
