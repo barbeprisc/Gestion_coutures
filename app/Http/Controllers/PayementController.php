@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use Illuminate\Http\Request;
-use App\Models\Mesure;
+use App\Models\Modele;
 use App\Models\Payement;
 
 class PayementController extends Controller
@@ -31,7 +31,7 @@ class PayementController extends Controller
     {
         return view('payement.formulaire_pay', [
             'clients' => Client::all(),
-            'modeles' => Modele::all(),
+            'modeles' => Modele::all()
         ]);
     }
 
@@ -43,7 +43,9 @@ class PayementController extends Controller
      */
     public function store(Request $request)
     {
-        Mesure::create([
+        Payement::create([
+            'clients_id' => $request->clients_id,
+            'modeles_id' => $request->modeles_id,
             'prix_total' => $request->prix_total,
             'avance' => $request->avance,
             'reste' => $request->reste,
@@ -74,6 +76,8 @@ class PayementController extends Controller
     {
         return view('payement.edit_pay', [
             'finds' => Payement::find($id),
+            'clients' => Client::all(),
+            'modeles' => Modele::all(),
         ]);
     }
 

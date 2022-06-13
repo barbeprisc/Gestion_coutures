@@ -17,7 +17,7 @@
         <p class="card-text">Telephone : <strong style="color: blue;">{{$finds->telephone}}</strong></p>
         <p class="card-text">Adresse : <strong style="color: blue;">{{$finds->adresse}}</strong></p>
         <p class="card-text">Email : <strong style="color: blue;">{{$finds->email}}</strong></p>
-        <p class="card-text">Email : <strong style="color: blue;">{{$finds->email}}</strong></p>
+
       </div>
     </div>
   </div>

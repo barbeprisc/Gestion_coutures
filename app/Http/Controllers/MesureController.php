@@ -42,6 +42,7 @@ class MesureController extends Controller
     public function store(Request $request)
     {
         Mesure::create([
+            'clients_id' => $request->clients_id,
             'dos' => $request->dos,
             'epaule' => $request->epaule,
             'poitrine' => $request->poitrine,
@@ -87,6 +88,7 @@ class MesureController extends Controller
     {
         return view('mesure.edit_mesure', [
             'finds' => Mesure::find($id),
+            'clients' => Client::all(),
         ]);
     }
 

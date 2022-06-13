@@ -29,9 +29,9 @@
                 <td>{{$payement->prix_total}}</td>
                 <td>{{$payement->avance}}</td>
                 <td>{{$payement->reste}}</td>
-                <td> <a class="button" href="{{route('gestion_mesure.show', [$mesure->id]) }}"><img src="{{ asset('Images/more.png') }}" style="width:30px;height:30px" alt=""></a> </td>
-                <td> <a class="button" href="{{route('gestion_mesure.edit', [$mesure->id]) }}"><img src="{{ asset('Images/edit.png') }}" style="width:30px;height:30px" alt=""></a> </td>
-                <td><a class="button" href="{{url('supprimer_mesure/'.$mesure->id) }}"><img src="{{ asset('Images/del.png') }}" style="width:30px;height:30px" alt=""></a></td>
+                <td> <a class="button" href="{{route('gestion_payement.show', [$payement->id]) }}"><img src="{{ asset('Img/more.png') }}" style="width:30px;height:30px" alt=""></a> </td>
+                <td> <a class="button" href="{{route('gestion_payement.edit', [$payement->id]) }}"><img src="{{ asset('Img/edit.png') }}" style="width:30px;height:30px" alt=""></a> </td>
+                <td><a class="button" href="{{url('supprimer_payement/'.$payement->id) }}"><img src="{{ asset('Img/del.png') }}" style="width:30px;height:30px" alt=""></a></td>
                 @endforeach
         </tbody>
     </table>

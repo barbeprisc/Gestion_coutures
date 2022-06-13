@@ -9,7 +9,7 @@
         <div class="col-lg-3 col-sm-3 me-2 container">
           <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Client</label>
-              <select class="form-control" name="clients_id" id="">
+              <select class="form-control" name="clients_id" id=""> 
                 @foreach($clients as $client)
                   <option value="{{$client->id}}">{{$client->nom}} {{$client->prenom}}</option>
                 @endforeach
