@@ -3,6 +3,9 @@
 
 <div class="container">
     <h2 class="text-center mt-3 text-primary shadow p-3 mb-5 bg-body rounded">Liste des mesures</h2>
+    <a href="{{ route('gestion_mesure.create') }}">
+        <button type="submit" class="btn btn-outline-primary me-md-2 btn-lg " name="valider">Nouveau</button>
+    </a>
     <table class="table shadow p-3 mb-5 bg-body rounded" id="myTable">
         <thead>
             <tr>

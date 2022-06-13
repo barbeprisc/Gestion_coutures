@@ -45,3 +45,5 @@ Route::get('supprimer_mesure/{id}', [MesureController::class, 'destroy']);
 Route::resource('gestion_payement', PayementController::class);
 
 Route::get('supprimer_payement/{id}', [PayementController::class, 'destroy']);
+
+Route::get('contact', [ClientController::class, 'helloo'])->name('contact');

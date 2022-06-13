@@ -104,4 +104,9 @@ class ClientController extends Controller
 
         return redirect()->route('gestion_client.index');
     }
+
+    public function helloo()
+    {
+        return view('contact');
+    }
 }
