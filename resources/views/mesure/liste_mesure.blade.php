@@ -7,7 +7,11 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">No</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Adresse</th>
+                <th scope="col">Email</th>
                 <th scope="col">dos</th>
                 <th scope="col">epaule</th>
                 <th scope="col">poitrine</th>
@@ -34,7 +38,11 @@
             @foreach($mesures as $mesure)
             <tr>
                 <th scope="row">{{$mesure->id}}</th>
-                <th scope="row">{{$client->id}}</th>
+                <td>{{$mesure->Client->nom}}</td>
+                <td>{{$mesure->Client->prenom}}</td>
+                <td>{{$mesure->Client->telephone}}</td>
+                <td>{{$mesure->Client->adresse}}</td>
+                <td>{{$mesure->Client->email}}</td>
                 <td>{{$mesure->dos}}</td>
                 <td>{{$mesure->epaule}}</td>
                 <td>{{$mesure->poitrine}}</td>

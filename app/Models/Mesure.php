@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Mesure extends Model
 {
     use HasFactory;
-    public function Client()
-    {
-        return $this->belongsTo(Client::class);
-    }
-
     protected $guarded = [
         
     ];
+    public function Client()
+    {
+        return $this->belongsTo(Client::class, 'clients_id');
+    }
 }
