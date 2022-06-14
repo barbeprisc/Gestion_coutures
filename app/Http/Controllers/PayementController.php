@@ -43,12 +43,13 @@ class PayementController extends Controller
      */
     public function store(Request $request)
     {
+        $reste = $request->prix_total - $request->avance;
         Payement::create([
             'clients_id' => $request->clients_id,
             'modeles_id' => $request->modeles_id,
             'prix_total' => $request->prix_total,
             'avance' => $request->avance,
-            'reste' => $request->reste,
+            'reste' => $reste,
         ]);
         return redirect()->route('gestion_payement.index');
     }
